@@ -11,15 +11,14 @@ To understand reverse authentication, read [this article](https://dev.twitter.co
 1. Within Xcode, copy the folder SocialAuthenticationPlugin to your plugin directory
 2. Copy authentication.js to your javascript directory
 3. Add authentication.js to your index.html
-4. Find the Cordova.plist file in the project navigator, expand the "Plugins" sub-tree, and add a new entry. For the key, add **com.phonegap.authentication**, and its value will be **SocialAuthenticationPlugin**
-5. Whitelist `https://api.twitter.com/` in your **ExternalHosts** in **Cordova.plist**
-6. From the **Build Settings** tab, click **Add Build Phase** and select **Add User-Defined Setting**, add "TWITTER_CONSUMER_KEY" and "TWITTER_CONSUMER_SECRET" to your user-defined values.
+4. Find the Cordova.plist file in the project navigator, expand the "Plugins" sub-tree, and add a new entry. For the key, add **Authentication**, and its value will be **SocialAuthenticationPlugin**
+5. Whitelist `https://api.twitter.com/` and your application server (localhost:3000 in the demo) in your **ExternalHosts** in **Cordova.plist**
+6. Add your Twitter consumer key (https://dev.twitter.com/apps) to SocialAuthenticationPlugin.m line 45
 7. From the **Build Phases** tab, expand **Link Binary With Libraries**, then click on the **+** button
 8. Select **Twitter.framework**, **Social.framework** and **Accounts.framework** then click Add
-9. In Build Phases, Compile Sources, add the following line to TWSignedRequest.m
 
-    -D'TWITTER_CONSUMER_KEY=@"$(TWITTER_CONSUMER_KEY)"' -D'TWITTER_CONSUMER_SECRET=@"$(TWITTER_CONSUMER_SECRET)"'
+See example/ for a working version.
 
-9. Add `-fno-objc-arc` to NSData+Base64.m, OAuth+Additions.m and OAuthCore.m
+## Application Server
 
-See example/ for a working version. You have to change the TWITTER_CONSUMER_KEY and TWITTER_CONSUMER_SECRET to the values for your Twitter application (https://dev.twitter.com/apps).
+For a node.js/passport.js application server, you can use this passport strategy https://github.com/drudge/passport-twitter-token and this route https://gist.github.com/f60a49a498d13c1bcf36#file_express.js.

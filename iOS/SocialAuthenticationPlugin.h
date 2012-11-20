@@ -29,16 +29,29 @@
 #import "social/Social.h"
 #import "accounts/Accounts.h"
 #import <Twitter/Twitter.h>
-#import "TWAPIManager.h"
-#import "TWSignedRequest.h"
+
+@protocol GenericTwitterRequest
+
+- (void) performRequestWithHandler:(SLRequestHandler)handler;
+- (void) setAccount:(ACAccount *)account;
+
+@end
+
+@class ACAccount;
+
+typedef void(^ReverseAuthResponseHandler)(NSData *responseData, NSError *error);
 
 @interface SocialAuthenticationPlugin : CDVPlugin
 
 @property (nonatomic,copy) NSArray *excludedActivityTypes;
 
-- (void) returnTwitterAccounts:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-- (void) isTwitterAvailable:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-- (void) performTwitterReverseAuthentication:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void) returnTwitterAccounts:(CDVInvokedUrlCommand*)command;
+- (void) isTwitterAvailable:(CDVInvokedUrlCommand*)command;
+- (void) performTwitterReverseAuthentication:(CDVInvokedUrlCommand*)command;
 - (void) performCallbackOnMainThreadforJS:(NSString*)js;
+- (BOOL) isLocalTwitterAccountAvailable;
+- (id<GenericTwitterRequest>)requestWithUrl:(NSURL *)url
+                                 parameters:(NSDictionary *)dict
+                              requestMethod:(SLRequestMethod )requestMethod;
 
 @end

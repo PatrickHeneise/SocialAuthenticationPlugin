@@ -40,11 +40,6 @@
 		30E1352710E2C1420031B30D /* Cordova.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E1352610E2C1420031B30D /* Cordova.plist */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CD8423791649236500D8FEFB /* SocialAuthenticationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84236C1649236500D8FEFB /* SocialAuthenticationPlugin.m */; };
-		CD84237A1649236500D8FEFB /* TWAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84236E1649236500D8FEFB /* TWAPIManager.m */; };
-		CD84237B1649236500D8FEFB /* TWSignedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8423701649236500D8FEFB /* TWSignedRequest.m */; settings = {COMPILER_FLAGS = "-D'TWITTER_CONSUMER_KEY=@\"$(TWITTER_CONSUMER_KEY)\"' -D'TWITTER_CONSUMER_SECRET=@\"$(TWITTER_CONSUMER_SECRET)\"'"; }; };
-		CD84237C1649236500D8FEFB /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8423741649236500D8FEFB /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CD84237D1649236500D8FEFB /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8423761649236500D8FEFB /* OAuth+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CD84237E1649236500D8FEFB /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8423781649236500D8FEFB /* OAuthCore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD8423851649249700D8FEFB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD84237F1649246D00D8FEFB /* Accounts.framework */; };
 		CD8423861649249700D8FEFB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8423801649246D00D8FEFB /* Social.framework */; };
 		CD8423871649249700D8FEFB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8423811649246D00D8FEFB /* Twitter.framework */; };
@@ -108,16 +103,6 @@
 		8D1107310486CEB800E47090 /* SocialAuthenticationExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SocialAuthenticationExample-Info.plist"; path = "../SocialAuthenticationExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CD84236B1649236500D8FEFB /* SocialAuthenticationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAuthenticationPlugin.h; sourceTree = "<group>"; };
 		CD84236C1649236500D8FEFB /* SocialAuthenticationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAuthenticationPlugin.m; sourceTree = "<group>"; };
-		CD84236D1649236500D8FEFB /* TWAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAPIManager.h; sourceTree = "<group>"; };
-		CD84236E1649236500D8FEFB /* TWAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAPIManager.m; sourceTree = "<group>"; };
-		CD84236F1649236500D8FEFB /* TWSignedRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSignedRequest.h; sourceTree = "<group>"; };
-		CD8423701649236500D8FEFB /* TWSignedRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSignedRequest.m; sourceTree = "<group>"; };
-		CD8423731649236500D8FEFB /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		CD8423741649236500D8FEFB /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		CD8423751649236500D8FEFB /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
-		CD8423761649236500D8FEFB /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
-		CD8423771649236500D8FEFB /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
-		CD8423781649236500D8FEFB /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
 		CD84237F1649246D00D8FEFB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CD8423801649246D00D8FEFB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CD8423811649246D00D8FEFB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -291,34 +276,8 @@
 			children = (
 				CD84236B1649236500D8FEFB /* SocialAuthenticationPlugin.h */,
 				CD84236C1649236500D8FEFB /* SocialAuthenticationPlugin.m */,
-				CD84236D1649236500D8FEFB /* TWAPIManager.h */,
-				CD84236E1649236500D8FEFB /* TWAPIManager.m */,
-				CD84236F1649236500D8FEFB /* TWSignedRequest.h */,
-				CD8423701649236500D8FEFB /* TWSignedRequest.m */,
-				CD8423711649236500D8FEFB /* Vendor */,
 			);
 			path = SocialAuthenticationPlugin;
-			sourceTree = "<group>";
-		};
-		CD8423711649236500D8FEFB /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				CD8423721649236500D8FEFB /* ABOAuthCore */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		CD8423721649236500D8FEFB /* ABOAuthCore */ = {
-			isa = PBXGroup;
-			children = (
-				CD8423731649236500D8FEFB /* NSData+Base64.h */,
-				CD8423741649236500D8FEFB /* NSData+Base64.m */,
-				CD8423751649236500D8FEFB /* OAuth+Additions.h */,
-				CD8423761649236500D8FEFB /* OAuth+Additions.m */,
-				CD8423771649236500D8FEFB /* OAuthCore.h */,
-				CD8423781649236500D8FEFB /* OAuthCore.m */,
-			);
-			path = ABOAuthCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,11 +400,6 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				CD8423791649236500D8FEFB /* SocialAuthenticationPlugin.m in Sources */,
-				CD84237A1649236500D8FEFB /* TWAPIManager.m in Sources */,
-				CD84237B1649236500D8FEFB /* TWSignedRequest.m in Sources */,
-				CD84237C1649236500D8FEFB /* NSData+Base64.m in Sources */,
-				CD84237D1649236500D8FEFB /* OAuth+Additions.m in Sources */,
-				CD84237E1649236500D8FEFB /* OAuthCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

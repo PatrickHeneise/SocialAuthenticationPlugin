@@ -16,15 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var success = function(s) {
-  console.log('success');
-  console.log(s);
-  console.log(s.join('&'));
-}
-var error = function(e) {
-  console.log('error');
-  console.log(e);
-}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -42,15 +33,21 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        window.plugins.SocialAuthenticationPlugin.isTwitterAvailable(function(r) {
-          if(r=='OK') {
-            window.plugins.SocialAuthenticationPlugin.returnTwitterAccounts(function(a) {
-              console.log(a);
-              window.plugins.SocialAuthenticationPlugin.performTwitterReverseAuthentication(success, error, a[0]);
-            })
-          }
-        });
+      var authentication = window.plugins.socialAuthenticationPlugin;
+      authentication.isTwitterAvailable(function(twitterIsAvailable) {
+        if(twitterIsAvailable == 'OK') {
+          authentication.returnTwitterAccounts(function(localAccounts) {
+            var success = function(s) {
+              console.log('success');
+            };
+            var error = function(f) {
+              console.log('error')
+            };
+            authentication.performTwitterReverseAuthentication(success, error, localAccounts[0]);
+          });
+        }
+      });
+      app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

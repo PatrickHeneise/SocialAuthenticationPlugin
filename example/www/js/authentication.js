@@ -1,20 +1,24 @@
-var SocialAuthenticationPlugin = function (){};
+(function(cordova) {
 
-SocialAuthenticationPlugin.prototype.isTwitterAvailable = function(response) {
-  cordova.exec(response, null, "com.phonegap.authentication", "isTwitterAvailable", []);
-};
+  function SocialAuthenticationPlugin (){};
 
-SocialAuthenticationPlugin.prototype.returnTwitterAccounts = function(response) {
-  cordova.exec(response, null, "com.phonegap.authentication", "returnTwitterAccounts", []);
-};
+  SocialAuthenticationPlugin.prototype.isTwitterAvailable = function(callback) {
+    cordova.exec(callback, null, 'Authentication', 'isTwitterAvailable', []);
+  };
 
-SocialAuthenticationPlugin.prototype.performTwitterReverseAuthentication = function(success, error, username){
-  options = {};
-  options.username = username;
-  cordova.exec(success, error, "com.phonegap.authentication", "performTwitterReverseAuthentication", [options]);
-};
+  SocialAuthenticationPlugin.prototype.returnTwitterAccounts = function(callback) {
+    cordova.exec(callback, null, 'Authentication', 'returnTwitterAccounts', []);
+  };
 
-cordova.addConstructor(function() {
-  if(!window.plugins) window.plugins = {};
-  window.plugins.SocialAuthenticationPlugin = new SocialAuthenticationPlugin();
-});
+  SocialAuthenticationPlugin.prototype.performTwitterReverseAuthentication = function(success, error, username) {
+    options = {};
+    options.username = username;
+    cordova.exec(success, error, 'Authentication', 'performTwitterReverseAuthentication', [username]);
+  };
+
+  cordova.addConstructor(function() {
+    if(!window.plugins) window.plugins = {};
+      window.plugins.socialAuthenticationPlugin = new SocialAuthenticationPlugin();
+    });
+
+})(window.cordova || window.Cordova);
