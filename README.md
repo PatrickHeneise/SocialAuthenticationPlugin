@@ -1,6 +1,6 @@
 # SocialAuthenticationPlugin for Cordova / PhoneGap & iOS 6
 
-by Patrick Heneise (@PatrickHeneise, about.me/PatrickHeneise)
+by Patrick Heneise ([@PatrickHeneise](http://twitter.com/PatrickHeneise), [about.me/PatrickHeneise](http://about.me/PatrickHeneise))
 
 With this plugin you perform a reverse OAuth authentication with Twitter to register users with your service.
 
